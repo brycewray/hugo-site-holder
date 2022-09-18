@@ -2,7 +2,7 @@
 <html lang="en" charset="utf-8">
 <head>
 	{{- $css := "" -}}
-	{{- $optionsCSS := ("targetPath" "css/ndex.css") -}}
+	{{- $optionsCSS := (dict "targetPath" "css/index.css") -}}
 	{{- $optionsCSSComp := merge $optionsCSS (dict "outputStyle" "compressed") -}}
 	{{- if hugo.IsProduction -}}
 		{{- $css = resources.Get "scss/index.scss" | resources.ToCSS $optionsCSSComp | fingerprint "md5" -}}
