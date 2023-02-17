@@ -6,6 +6,4 @@ This line is from `content/_index.md`.
 
 [Go to firstpost](/firstpost/).
 
-Now back to this repo on Vercel.
-
-One more time.
+Putting the CFP version back in this standby mode.
