@@ -6,4 +6,4 @@ This line is from `content/_index.md`.
 
 [Go to firstpost](/firstpost/).
 
-Putting the Vercel version back in this standby mode.
+Putting the Vercel version back in this standby mode once again.
