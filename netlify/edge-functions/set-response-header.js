@@ -1,14 +1,12 @@
 // changing from TS to JS
-export default async (request, context) => {
-  const url = new URL(request.url);
-
-  if (url.searchParams.get("method") !== "set-response-header") {
-    return context.next();
-  }
-
-  console.log(`Adding a custom header to the response for ${url}`);
-
-  const response = await context.next();
-  response.headers.set("X-Your-Custom-Header", "Your custom header value");
-  return response;
-};
+export default async (request) => {
+	let response = await fetch(request)
+	const html = (await response.text())
+	let newHeaders = new Headers(response.headers)
+	newHeaders.set("X-Test-Header", "It worked!")
+  return new Response(html, {
+		status: response.status,
+		statusText: response.statusText,
+		headers: newHeaders
+	})
+}
