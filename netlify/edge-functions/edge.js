@@ -1,3 +1,4 @@
+// changing from TS to JS
 export default async (request, context) => {
   const url = new URL(request.url);
 
