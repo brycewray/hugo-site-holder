@@ -1,6 +1,0 @@
-[build]
-	publish = "public"
-
-[[edge_functions]]
-  function = "caches-nonces"
-  path = "/*"
