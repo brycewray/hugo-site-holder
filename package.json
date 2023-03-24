@@ -1,0 +1,11 @@
+{
+  "name": "hugo-site-holder",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "devDependencies": {
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "postcss-nesting": "^11.2.1"
+  }
+}
