@@ -2,10 +2,10 @@
 <html lang="en" charset="utf-8">
 <head>
 	{{- $css := "" -}}
-	{{- $css = resources.Get "css/index.css" | postCSS | fingerprint "md5" -}}
+	{{- $css = resources.Get "css/index.css" | minify | fingerprint -}}
 	{{/*- Fingerprinting in dev due to Safari weirdness -*/}}
-	<link rel="preload" as="style" href="{{ $css.RelPermalink }}" />
-	<link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" />
+	{{/*  <link rel="preload" as="style" href="{{ $css.RelPermalink }}" />  */}}
+	<link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" media="screen" integrity="{{ $css.Data.Integrity }}">
 </head>
 <body>
 	{{ block "main" . }}
