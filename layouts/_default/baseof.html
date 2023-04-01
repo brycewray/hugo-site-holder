@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" charset="utf-8">
 <head>
-	{{- $css := "" -}}
-	{{- $css = resources.Get "css/index.css" | minify | fingerprint -}}
-	{{/*- Fingerprinting in dev due to Safari weirdness -*/}}
-	{{/*  <link rel="preload" as="style" href="{{ $css.RelPermalink }}" />  */}}
-	<link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" media="screen" integrity="{{ $css.Data.Integrity }}">
+	{{- $css := resources.Get "css/index.css" -}}
+	{{- if hugo.IsProduction -}}
+		{{- $css = $css | minify | fingerprint -}}
+	{{- end -}}
+	<link rel="preload" href="{{ $css.RelPermalink }}" as="style"{{- if hugo.IsProduction -}} integrity="{{ $css.Data.Integrity }}" crossorigin{{- end -}}>
+	<link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" media="screen"{{- if hugo.IsProduction -}} integrity="{{ $css.Data.Integrity }}" crossorigin{{- end -}}>
 </head>
 <body>
 	{{ block "main" . }}
