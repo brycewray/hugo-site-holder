@@ -1,0 +1,29 @@
+{
+  "name": "hugo-site-holder",
+  "author": "Bryce Wray",
+  "license": "MIT",
+  "engines": {
+    "node": "18.x"
+  },
+  "config": {
+    "hugo": "0.111.3"
+  },
+  "scripts": {
+    "clean": "rimraf public",
+    "install:hugo": "hugo-installer --version config.hugo --extended",
+    "dev:hugo": "npm run install:hugo && exec-bin bin/hugo/hugo server --port 3000 --bind=0.0.0.0 --baseURL=http://192.168.254.10:3000 --panicOnWarning --disableFastRender --forceSyncStatic --gc",
+    "prod:hugo": "npm run install:hugo && exec-bin bin/hugo/hugo --minify --gc",
+    "hugonew": "exec-bin bin/hugo/hugo new",
+    "testbuild:hugo": "npm run install:hugo && npm run dev:hugo -- --minify --environment=production",
+    "start": "NODE_ENV=development npm-run-all clean dev:hugo",
+    "build": "NODE_ENV=production npm-run-all clean prod:hugo",
+    "testbuild": "NODE_ENV=production npm-run-all clean testbuild:hugo"
+  },
+  "devDependencies": {
+    "exec-bin": "^1.0.0",
+    "hugo-installer": "^4.0.1",
+    "move-cli": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.0"
+  }
+}
