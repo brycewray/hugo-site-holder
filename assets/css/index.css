@@ -21,7 +21,6 @@ a {
 		background-color: var(--default-light);
 	}
 	a {
-		@media (prefers-color-scheme: dark) {
-			color: var(--link-dark);
+		color: var(--link-dark);
 	}
 }
