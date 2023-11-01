@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" charset="utf-8">
 <head>
-	{{- $optionsSass := (dict "transpiler" "dartsass" "outputStyle" "compressed") -}}
-	{{/* (processing CSS via Dart Sass) */}}
-	{{- $css := resources.Get "css/index.css" | toCSS $optionsSass | fingerprint -}}
-	{{/*  {{- if hugo.IsProduction -}}
-		{{- $css = $css | minify | fingerprint -}}
-	{{- end -}}  */}}
-	<link rel="preload" href="{{ $css.RelPermalink }}" as="style"{{- if hugo.IsProduction -}} integrity="{{ $css.Data.Integrity }}" crossorigin{{- end -}}>
-	<link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" media="screen"{{- if hugo.IsProduction -}} integrity="{{ $css.Data.Integrity }}" crossorigin{{- end -}}>
 </head>
 <body>
 	{{ block "main" . }}
