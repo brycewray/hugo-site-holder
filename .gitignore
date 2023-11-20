@@ -52,3 +52,5 @@ gha*.json
 static/_pagefind
 
 bin/hugo
+
+.wrangler
