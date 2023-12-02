@@ -1,5 +1,5 @@
 {
-	"name": "hugo-site-holder",
+  "name": "hugo-site-holder",
   "pnpm": {
     "overrides": {
       "semver": "^7.5.4"
@@ -35,7 +35,11 @@
   "devDependencies": {
     "exec-bin": "^1.0.0",
     "hugo-installer": "^4.0.1",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-nesting": "^12.0.1",
     "rimraf": "^5.0.5",
-    "wrangler": "^3.17.1"
+    "wrangler": "^3.18.0"
   }
 }
