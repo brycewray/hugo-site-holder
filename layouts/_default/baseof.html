@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" charset="utf-8">
 <head>
+	{{- $css := resources.Get "css/index.css" | postCSS }}
+	{{- with $css }}
+		<style media="screen">{{ .Content | safeCSS }}</style>
+	{{- end }}
 </head>
 <body>
 	{{ block "main" . }}
