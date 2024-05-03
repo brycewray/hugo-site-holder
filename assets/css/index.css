@@ -5,6 +5,14 @@
 Using native CSS nesting herein, albeit passed through Dart Sass.
 */
 
+:root {
+	--sans-serif: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--default-light: black;
+	--default-dark: white;
+	--link-light: blue;
+	--link-dark: cyan;
+}
+
 html, body {
 	font-family: var(--sans-serif);
 	color: var(--default-light);
