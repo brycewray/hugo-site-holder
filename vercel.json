@@ -2,9 +2,6 @@
   "github": {
     "silent": true
   },
-	"engines": {
-		"node": "22.x"
-	},
   "headers": [
     {
       "source": "(.*)",
