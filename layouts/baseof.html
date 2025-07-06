@@ -6,7 +6,8 @@
 <!DOCTYPE html>
 <html lang="en" charset="utf-8">
 <head>
-	{{- $css := resources.Get "scss/index.scss" | toCSS $opts -}}
+	{{/*  {{- $css := resources.Get "scss/index.scss" | toCSS $opts -}}  */}}
+	{{- $css := resources.Get "css/index.css" -}}
 	{{- with $css }}
 		<link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" media="screen">
 	{{- end }}
