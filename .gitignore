@@ -29,6 +29,7 @@ build*.sh
 testbuild.sh
 push.sh
 myip.txt
+mypath.txt
 wm*.sh
 git*.sh
 gitoutput.txt
